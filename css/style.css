@@ -1,0 +1,61 @@
+/*********************************************
+				Leaf Icon
+**********************************************/
+
+@keyframes draw {
+	100% {
+		stroke-dashoffset: 0;
+	}
+}
+@keyframes stroke-fade-out {
+	100% {
+		stroke-opacity: 0;
+	}
+}
+@keyframes fade-in {
+	100% {
+		opacity: 1;
+	}
+}
+@keyframes falling-leaf {
+	10% {
+		transform: rotateZ(-10deg) translate(0, -50px);
+	}
+	30% {
+		transform: rotateZ(7deg) translate(0, -40px);
+	}
+	60% {
+		transform: rotateZ(-5deg) translate(0, -25px);
+	}
+	80% {
+		transform: rotateZ(3deg) translate(0, -15px);
+	}
+	100% {
+		transform: translate(0, 0);
+		fill: white;
+	}
+}
+
+
+.leaf-icon circle {
+	opacity: 0;
+	animation: fade-in 1.5s ease 1.5s forwards;
+}
+.leafs path:nth-of-type(2n + 1) {
+	stroke: black;
+	stroke-width: 1px;
+	stroke-dasharray: 283;
+	stroke-dashoffset: 283;
+	animation: draw 1.5s linear forwards,
+			   stroke-fade-out 1s ease 1.5s forwards;
+}
+.leafs path:nth-of-type(2) {
+	transform-origin: 0% 0%;
+	transform: translate(0, -50px);
+	fill: green;
+	animation: falling-leaf 2.5s linear forwards;
+}
+/*********************************************
+				Lettering
+**********************************************/
+
